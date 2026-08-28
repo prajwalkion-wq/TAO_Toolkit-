@@ -15,78 +15,82 @@ wandb:
   name: TAO Toolkit training experiment
   run_id: ''
 model:
-  pretrained_backbone_path: null
-  backbone: resnet_50
+  pretrained_backbone_path: null 
+  backbone: resnet_50 
   train_backbone: true
   load_teacher_enc_dec: false 
   num_queries: 300  # Number of candidate object predictions.
   num_select: 300 # Number of predictions selected for the final output.
   num_feature_levels: 3 # Number of feature levels to use.
-  return_interm_indices: 
-  - 1
+  return_interm_indices: # The indices of the intermediate layers to return.
+  - 1 # Return the first intermediate layer.
+  - 2 # Return the second intermediate layer.
+  - 3 # Return the third intermediate layer.
+  feat_strides: # Strides of the feature levels.
+  - 8 # Stride of the first feature level.
+  - 16 # Stride of the second feature level.
+  - 32 # Stride of the third feature level.
+  feat_channels: # Number of channels in each feature level.
+  - 256 # Number of channels in the first feature level.
+  - 256 # Number of channels in the second feature level.
+  - 256 # Number of channels in the third feature level.
+  use_encoder_idx: # Indices of the feature levels to use.
   - 2
-  - 3
-  feat_strides:
-  - 8
-  - 16
-  - 32
-  feat_channels:
-  - 256
-  - 256
-  - 256
-  use_encoder_idx:
-  - 2
-  hidden_dim: 256
+  hidden_dim: 256  # The hidden dimension of the model.
   nheads: 8  # The attention mechanism has 8 attention heads.
-  dropout_ratio: 0.0
-  enc_layers: 1
-  dim_feedforward: 1024
-  pe_temperature: 10000
-  expansion: 1.0
-  depth_mult: 1
-  enc_act: gelu
-  act: silu
-  dec_layers: 6
-  dn_number: 100
-  eval_idx: -1
-  vfl_loss_coef: 1.0
-  bbox_loss_coef: 5.0
-  giou_loss_coef: 2.0
-  class_cost: 2.0
-  bbox_cost: 5.0
-  giou_cost: 2.0
-  alpha: 0.75
-  gamma: 2.0
-  clip_max_norm: 0.1
-  aux_loss: true
-  loss_types:
-  - vfl
-  - boxes
-  backbone_names:
+  dropout_ratio: 0.0 # Dropout ratio.
+  enc_layers: 1 # Number of encoder layers.
+  dim_feedforward: 1024 # Dimension of the feedforward network.
+  pe_temperature: 10000  # Temperature for the sinusoidal positional encoding.
+  expansion: 1.0 # Expansion factor for the feedforward network.
+  depth_mult: 1 # Depth multiplier for the encoder.
+  enc_act: gelu # Encoder activation function.
+  act: silu # Decoder activation function.
+  dec_layers: 6 # Number of decoder layers.
+  dn_number: 100 # Number of denoising training queries.
+  eval_idx: -1 # Index of the evaluation results to use.
+  vfl_loss_coef: 1.0 # Weight for the focal loss.
+  bbox_loss_coef: 5.0 # Weight for the box loss.
+  giou_loss_coef: 2.0 # Weight for the GIoU loss. (GIoU is a metric to evaluate the overlap between the predicted and the ground-truth boxes.)
+  class_cost: 2.0 # Cost for the class prediction.
+  bbox_cost: 5.0 # Cost for the box prediction.
+  giou_cost: 2.0 # Cost for the GIoU prediction.
+  alpha: 0.75 # Alpha parameter for the focal loss. (It controls the weight of the "easy" examples.)
+  gamma: 2.0 # Gamma parameter for the focal loss. (It controls the weight of the "hard" examples.)
+  clip_max_norm: 0.1 # Clip the gradients to this value.
+  aux_loss: true # Use auxiliary losses.
+  loss_types: # Types of losses to use.
+  - vfl # Variational Focal Loss (VFL)
+  - boxes # Box loss
+  backbone_names: # Names of the backbone layers to use.
   - backbone.0
-  linear_proj_names:
+  linear_proj_names: # Names of the linear projection layers to use.
   - reference_points
   - sampling_offsets
-  distillation_loss_coef: 1.0
-  frozen_fm:
-    enabled: false
+  distillation_loss_coef: 1.0 # Coefficient for the distillation loss.
+  frozen_fm:   # Your model configuration supports foundation-model semantic distillation, but you have not enabled it yet.
+    enabled: false # Enable foundation-model semantic distillation.
     backbone: radio_v2-l
     checkpoint: null
 dataset:
-  train_data_sources: null
-  val_data_sources: null
+  train_data_sources:
+    - image_dir: /workspace/new_scenerio_dataset_rtdetr/train/images
+      json_file: /workspace/new_scenerio_dataset_rtdetr/annotations/instances_train.json
+  val_data_sources:
+    - image_dir: /workspace/new_scenerio_dataset_rtdetr/val/images
+      json_file: /workspace/new_scenerio_dataset_rtdetr/annotations/instances_val.json
   test_data_sources: null
   infer_data_sources: null
-  quant_calibration_data_sources: null
-  batch_size: 4
-  workers: 8
-  remap_mscoco_category: false
-  pin_memory: true
-  dataset_type: serialized
-  num_classes: 80
-  eval_class_ids: null
+  quant_calibration_data_sources: null # Need to change as per the dataset used.
+  batch_size: 2 # Batch size for training.
+  workers: 8 # Number of workers for data loading.
+  remap_mscoco_category: false # Remap COCO categories.
+  pin_memory: true # Pin memory.
+  dataset_type: coco_format # Type of dataset.
+  num_classes: 3 # Number of classes.
+  eval_class_ids: null # IDs of the classes to evaluate.
   augmentation:
-    multi_scales:
+    multi_scales: # Multi-scale training.
     - 480
     - 512
     - 544
@@ -121,8 +125,8 @@ train:
   checkpoint_interval_unit: epoch
   validation_interval: 1
   resume_training_checkpoint_path: null
-  results_dir: null
-  freeze: []
+  results_dir: /workspace/results/train
+  freeze: [] # we can freeze the backbone of the model by adding the layer names to this list.
   pretrained_model_path: null
   clip_grad_norm: 0.1
   is_dry_run: false
@@ -155,8 +159,8 @@ evaluate:
   num_nodes: 1
   checkpoint: ???
   trt_engine: null
-  results_dir: null
-  batch_size: -1
+  results_dir: /workspace/results/evaluate
+  batch_size: 1
   input_width: null
   input_height: null
   conf_threshold: 0.0
@@ -168,8 +172,8 @@ inference:
   num_nodes: 1
   checkpoint: ???
   trt_engine: null
-  results_dir: null
-  batch_size: -1
+  results_dir: /workspace/results/inference
+  batch_size: 1
   color_map: null
   conf_threshold: 0.5
   is_internal: false
@@ -178,7 +182,7 @@ inference:
   outline_width: 3
   is_quantized: false
 export:
-  results_dir: null
+  results_dir: /workspace/results/export
   gpu_id: 0
   checkpoint: ???
   onnx_file: ???
@@ -187,18 +191,18 @@ export:
   input_width: 640
   input_height: 640
   opset_version: 17
-  batch_size: -1
+  batch_size: 1
   verbose: false
   format: onnx
   serialize_nvdsinfer: false
   is_quantized: false
-gen_trt_engine:
-  results_dir: null
+gen_trt_engine: 
+  results_dir: /workspace/results/trt_engine
   gpu_id: 0
   onnx_file: ???
   trt_engine: ???
   timing_cache: null
-  batch_size: -1
+  batch_size: 1
   verbose: false
   tensorrt:
     workspace_size: 1024
