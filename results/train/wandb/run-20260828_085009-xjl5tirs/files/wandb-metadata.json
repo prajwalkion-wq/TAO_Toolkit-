@@ -1,0 +1,43 @@
+{
+  "os":  "Linux-7.0.0-30-generic-x86_64-with-glibc2.39",
+  "python":  "CPython 3.12.3",
+  "startedAt":  "2026-08-28T08:50:09.830198Z",
+  "args":  [
+    "--config-path",
+    "/workspace/experiments",
+    "--config-name",
+    "experiment.yaml"
+  ],
+  "program":  "/usr/local/lib/python3.12/dist-packages/nvidia_tao_pytorch/cv/rtdetr/scripts/train.py",
+  "git":  {
+    "remote":  "git@github.com:prajwalkion-wq/TAO_Toolkit-.git"
+  },
+  "email":  "prajwalkion@gmail.com",
+  "root":  "/workspace/results/train",
+  "host":  "4d1a4129b10d",
+  "executable":  "/usr/bin/python3",
+  "cpu_count":  8,
+  "cpu_count_logical":  16,
+  "gpu":  "NVIDIA RTX A3000 Laptop GPU",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "340176953344",
+      "used":  "78356959232"
+    }
+  },
+  "memory":  {
+    "total":  "66580336640"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA RTX A3000 Laptop GPU",
+      "memoryTotal":  "6442450944",
+      "cudaCores":  4096,
+      "architecture":  "Ampere",
+      "uuid":  "GPU-abd9532b-cf9d-c46c-72b6-2f7844a7a43d"
+    }
+  ],
+  "cudaVersion":  "13.2",
+  "writerId":  "97h09lsznuyhm8sx1rst84y9n06ap12g"
+}

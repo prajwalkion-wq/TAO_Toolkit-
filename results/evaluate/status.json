@@ -1,0 +1,8 @@
+{"date": "8/28/2026", "time": "9:49:43", "status": "STARTED", "verbosity": "INFO", "message": "Starting RT-DETR evaluate."}
+{"date": "8/28/2026", "time": "9:49:43", "status": "FAILURE", "verbosity": "INFO", "message": "Configuration error: Missing mandatory value: evaluate.checkpoint\n    full_key: evaluate.checkpoint\n    reference_type=RTEvalExpConfig\n    object_type=RTEvalExpConfig"}
+{"date": "8/28/2026", "time": "9:51:32", "status": "STARTED", "verbosity": "INFO", "message": "Starting RT-DETR evaluate."}
+{"date": "8/28/2026", "time": "9:51:32", "status": "RUNNING", "verbosity": "INFO", "message": "Loading checkpoint: /workspace/results/train/model_epoch_008.pth"}
+{"date": "8/28/2026", "time": "9:53:52", "status": "STARTED", "verbosity": "INFO", "message": "Starting RT-DETR evaluate."}
+{"date": "8/28/2026", "time": "9:53:52", "status": "RUNNING", "verbosity": "INFO", "message": "Loading checkpoint: /workspace/results/train/model_epoch_008.pth"}
+{"date": "8/28/2026", "time": "9:54:47", "status": "RUNNING", "verbosity": "INFO", "message": "Test metrics generated.", "kpi": {"test_mAP": "0.8485496948521988", "test_mAP50": "0.9826353784648226"}}
+{"date": "8/28/2026", "time": "9:54:47", "status": "RUNNING", "verbosity": "INFO", "message": "Evaluate finished successfully.", "kpi": {"test_mAP": "0.8485496948521988", "test_mAP50": "0.9826353784648226"}}

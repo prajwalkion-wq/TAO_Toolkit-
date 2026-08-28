@@ -1,0 +1,93 @@
+/usr/local/lib/python3.12/dist-packages/pytorch_lightning/callbacks/model_checkpoint.py:881: Checkpoint directory /workspace/results/train exists and is not empty.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+┏━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━┓
+┃   ┃ Name           ┃ Type              ┃ Params ┃ Mode  ┃ FLOPs ┃
+┡━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━┩
+│ 0 │ model          │ RTDETRModel       │ 42.8 M │ train │     0 │
+│ 1 │ matcher        │ HungarianMatcher  │      0 │ train │     0 │
+│ 2 │ criterion      │ SetCriterion      │      0 │ train │     0 │
+│ 3 │ box_processors │ RTDETRPostProcess │      0 │ train │     0 │
+└───┴────────────────┴───────────────────┴────────┴───────┴───────┘
+Trainable params: 42.8 M
+Non-trainable params: 0
+Total params: 42.8 M
+Total estimated model params size (MB): 171
+Modules in train mode: 597
+Modules in eval mode: 0
+Total FLOPs: 0
+Serializing 1758 elements to byte tensors and concatenating them all ...
+Serialized dataset takes 0.79 MiB
+Worker 0 obtains a dataset of length=1758 from its local leader.
+/usr/local/lib/python3.12/dist-packages/pytorch_lightning/utilities/_pytree.py:21: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+[38;20m2026-08-28 08:50:14,093 - [TAO Toolkit] - INFO - Validation mAP : 0.0 (pl_rtdetr_model.py:301)[0m
+[38;20m2026-08-28 08:50:14,093 - [TAO Toolkit] - INFO - Validation mAP : 0.0 (pl_rtdetr_model.py:301)[0m
+Validation mAP : 0.0
+[38;20m2026-08-28 08:50:14,096 - [TAO Toolkit] - INFO - Validation mAP50 : 0.0 (pl_rtdetr_model.py:302)[0m
+[38;20m2026-08-28 08:50:14,096 - [TAO Toolkit] - INFO - Validation mAP50 : 0.0 (pl_rtdetr_model.py:302)[0m
+Validation mAP50 : 0.0
+Serializing 1758 elements to byte tensors and concatenating them all ...
+Serialized dataset takes 0.79 MiB
+Worker 0 obtains a dataset of length=1758 from its local leader.
+[38;20m2026-08-28 08:54:38,389 - [TAO Toolkit] - INFO - Validation mAP : 0.5133226543294804 (pl_rtdetr_model.py:301)[0m
+[38;20m2026-08-28 08:54:38,389 - [TAO Toolkit] - INFO - Validation mAP : 0.5133226543294804 (pl_rtdetr_model.py:301)[0m
+Validation mAP : 0.5133226543294804
+[38;20m2026-08-28 08:54:38,390 - [TAO Toolkit] - INFO - Validation mAP50 : 0.6628079345642854 (pl_rtdetr_model.py:302)[0m
+[38;20m2026-08-28 08:54:38,390 - [TAO Toolkit] - INFO - Validation mAP50 : 0.6628079345642854 (pl_rtdetr_model.py:302)[0m
+Validation mAP50 : 0.6628079345642854
+[38;20m2026-08-28 08:59:03,154 - [TAO Toolkit] - INFO - Validation mAP : 0.6402579809330529 (pl_rtdetr_model.py:301)[0m
+[38;20m2026-08-28 08:59:03,154 - [TAO Toolkit] - INFO - Validation mAP : 0.6402579809330529 (pl_rtdetr_model.py:301)[0m
+Validation mAP : 0.6402579809330529
+[38;20m2026-08-28 08:59:03,155 - [TAO Toolkit] - INFO - Validation mAP50 : 0.8303124740214364 (pl_rtdetr_model.py:302)[0m
+[38;20m2026-08-28 08:59:03,155 - [TAO Toolkit] - INFO - Validation mAP50 : 0.8303124740214364 (pl_rtdetr_model.py:302)[0m
+Validation mAP50 : 0.8303124740214364
+[38;20m2026-08-28 09:03:26,959 - [TAO Toolkit] - INFO - Validation mAP : 0.6837793164088687 (pl_rtdetr_model.py:301)[0m
+[38;20m2026-08-28 09:03:26,959 - [TAO Toolkit] - INFO - Validation mAP : 0.6837793164088687 (pl_rtdetr_model.py:301)[0m
+Validation mAP : 0.6837793164088687
+[38;20m2026-08-28 09:03:26,960 - [TAO Toolkit] - INFO - Validation mAP50 : 0.9117145829104344 (pl_rtdetr_model.py:302)[0m
+[38;20m2026-08-28 09:03:26,960 - [TAO Toolkit] - INFO - Validation mAP50 : 0.9117145829104344 (pl_rtdetr_model.py:302)[0m
+Validation mAP50 : 0.9117145829104344
+[38;20m2026-08-28 09:07:53,256 - [TAO Toolkit] - INFO - Validation mAP : 0.6041264983095083 (pl_rtdetr_model.py:301)[0m
+[38;20m2026-08-28 09:07:53,256 - [TAO Toolkit] - INFO - Validation mAP : 0.6041264983095083 (pl_rtdetr_model.py:301)[0m
+Validation mAP : 0.6041264983095083
+[38;20m2026-08-28 09:07:53,257 - [TAO Toolkit] - INFO - Validation mAP50 : 0.7971913679629254 (pl_rtdetr_model.py:302)[0m
+[38;20m2026-08-28 09:07:53,257 - [TAO Toolkit] - INFO - Validation mAP50 : 0.7971913679629254 (pl_rtdetr_model.py:302)[0m
+Validation mAP50 : 0.7971913679629254
+[38;20m2026-08-28 09:12:13,743 - [TAO Toolkit] - INFO - Validation mAP : 0.7146382533729465 (pl_rtdetr_model.py:301)[0m
+[38;20m2026-08-28 09:12:13,743 - [TAO Toolkit] - INFO - Validation mAP : 0.7146382533729465 (pl_rtdetr_model.py:301)[0m
+Validation mAP : 0.7146382533729465
+[38;20m2026-08-28 09:12:13,744 - [TAO Toolkit] - INFO - Validation mAP50 : 0.8764535585265825 (pl_rtdetr_model.py:302)[0m
+[38;20m2026-08-28 09:12:13,744 - [TAO Toolkit] - INFO - Validation mAP50 : 0.8764535585265825 (pl_rtdetr_model.py:302)[0m
+Validation mAP50 : 0.8764535585265825
+[38;20m2026-08-28 09:16:38,583 - [TAO Toolkit] - INFO - Validation mAP : 0.8505553828324877 (pl_rtdetr_model.py:301)[0m
+[38;20m2026-08-28 09:16:38,583 - [TAO Toolkit] - INFO - Validation mAP : 0.8505553828324877 (pl_rtdetr_model.py:301)[0m
+Validation mAP : 0.8505553828324877
+[38;20m2026-08-28 09:16:38,584 - [TAO Toolkit] - INFO - Validation mAP50 : 0.971435277167721 (pl_rtdetr_model.py:302)[0m
+[38;20m2026-08-28 09:16:38,584 - [TAO Toolkit] - INFO - Validation mAP50 : 0.971435277167721 (pl_rtdetr_model.py:302)[0m
+Validation mAP50 : 0.971435277167721
+[38;20m2026-08-28 09:21:06,136 - [TAO Toolkit] - INFO - Validation mAP : 0.6050196864157925 (pl_rtdetr_model.py:301)[0m
+[38;20m2026-08-28 09:21:06,136 - [TAO Toolkit] - INFO - Validation mAP : 0.6050196864157925 (pl_rtdetr_model.py:301)[0m
+Validation mAP : 0.6050196864157925
+[38;20m2026-08-28 09:21:06,137 - [TAO Toolkit] - INFO - Validation mAP50 : 0.7699325580018154 (pl_rtdetr_model.py:302)[0m
+[38;20m2026-08-28 09:21:06,137 - [TAO Toolkit] - INFO - Validation mAP50 : 0.7699325580018154 (pl_rtdetr_model.py:302)[0m
+Validation mAP50 : 0.7699325580018154
+[38;20m2026-08-28 09:25:29,238 - [TAO Toolkit] - INFO - Validation mAP : 0.7198957788836914 (pl_rtdetr_model.py:301)[0m
+[38;20m2026-08-28 09:25:29,238 - [TAO Toolkit] - INFO - Validation mAP : 0.7198957788836914 (pl_rtdetr_model.py:301)[0m
+Validation mAP : 0.7198957788836914
+[38;20m2026-08-28 09:25:29,239 - [TAO Toolkit] - INFO - Validation mAP50 : 0.935615775335749 (pl_rtdetr_model.py:302)[0m
+[38;20m2026-08-28 09:25:29,239 - [TAO Toolkit] - INFO - Validation mAP50 : 0.935615775335749 (pl_rtdetr_model.py:302)[0m
+Validation mAP50 : 0.935615775335749
+[38;20m2026-08-28 09:29:54,457 - [TAO Toolkit] - INFO - Validation mAP : 0.8485496948521988 (pl_rtdetr_model.py:301)[0m
+[38;20m2026-08-28 09:29:54,457 - [TAO Toolkit] - INFO - Validation mAP : 0.8485496948521988 (pl_rtdetr_model.py:301)[0m
+Validation mAP : 0.8485496948521988
+[38;20m2026-08-28 09:29:54,458 - [TAO Toolkit] - INFO - Validation mAP50 : 0.9826353784648226 (pl_rtdetr_model.py:302)[0m
+[38;20m2026-08-28 09:29:54,458 - [TAO Toolkit] - INFO - Validation mAP50 : 0.9826353784648226 (pl_rtdetr_model.py:302)[0m
+Validation mAP50 : 0.9826353784648226
+[38;20m2026-08-28 09:34:23,057 - [TAO Toolkit] - INFO - Validation mAP : 0.6935612721837425 (pl_rtdetr_model.py:301)[0m
+[38;20m2026-08-28 09:34:23,057 - [TAO Toolkit] - INFO - Validation mAP : 0.6935612721837425 (pl_rtdetr_model.py:301)[0m
+Validation mAP : 0.6935612721837425
+[38;20m2026-08-28 09:34:23,058 - [TAO Toolkit] - INFO - Validation mAP50 : 0.8893714116954524 (pl_rtdetr_model.py:302)[0m
+[38;20m2026-08-28 09:34:23,058 - [TAO Toolkit] - INFO - Validation mAP50 : 0.8893714116954524 (pl_rtdetr_model.py:302)[0m
+Validation mAP50 : 0.8893714116954524
+`Trainer.fit` stopped: `max_epochs=10` reached.
+Epoch 9/9  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 879/879 0:04:06 • 0:00:00 3.61it/s v_num: tirs train_loss_step: 10.720 lr: 0.000 val_loss:
+                                                                                       0.873 train_loss_epoch: 11.099

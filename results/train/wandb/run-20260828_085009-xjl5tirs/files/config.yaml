@@ -1,0 +1,326 @@
+_wandb:
+    value:
+        cli_version: 0.26.1
+        e:
+            97h09lsznuyhm8sx1rst84y9n06ap12g:
+                args:
+                    - --config-path
+                    - /workspace/experiments
+                    - --config-name
+                    - experiment.yaml
+                cpu_count: 8
+                cpu_count_logical: 16
+                cudaVersion: "13.2"
+                disk:
+                    /:
+                        total: "340176953344"
+                        used: "78356959232"
+                email: prajwalkion@gmail.com
+                executable: /usr/bin/python3
+                git:
+                    remote: git@github.com:prajwalkion-wq/TAO_Toolkit-.git
+                gpu: NVIDIA RTX A3000 Laptop GPU
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ampere
+                      cudaCores: 4096
+                      memoryTotal: "6442450944"
+                      name: NVIDIA RTX A3000 Laptop GPU
+                      uuid: GPU-abd9532b-cf9d-c46c-72b6-2f7844a7a43d
+                host: 4d1a4129b10d
+                memory:
+                    total: "66580336640"
+                os: Linux-7.0.0-30-generic-x86_64-with-glibc2.39
+                program: /usr/local/lib/python3.12/dist-packages/nvidia_tao_pytorch/cv/rtdetr/scripts/train.py
+                python: CPython 3.12.3
+                root: /workspace/results/train
+                startedAt: "2026-08-28T08:50:09.830198Z"
+                writerId: 97h09lsznuyhm8sx1rst84y9n06ap12g
+        m:
+            - "2": '*'
+              "5": 2
+              "6":
+                - 1
+              "7": []
+            - "1": global_step
+              "6": []
+              "7": []
+        python_version: 3.12.3
+        t:
+            "1":
+                - 1
+                - 5
+                - 9
+                - 11
+                - 41
+                - 49
+                - 50
+                - 53
+                - 63
+                - 103
+                - 105
+            "2":
+                - 1
+                - 5
+                - 9
+                - 11
+                - 41
+                - 49
+                - 50
+                - 53
+                - 63
+                - 103
+                - 105
+            "3":
+                - 7
+                - 13
+                - 15
+                - 16
+                - 35
+                - 41
+            "4": 3.12.3
+            "5": 0.26.1
+            "6": 4.57.6
+            "12": 0.26.1
+            "13": linux-x86_64
+dataset:
+    value:
+        augmentation:
+            distortion_prob: 0.8
+            eval_spatial_size:
+                - 640
+                - 640
+            iou_crop_prob: 0.8
+            multi_scales:
+                - 480
+                - 512
+                - 544
+                - 576
+                - 608
+                - 640
+                - 672
+                - 704
+                - 736
+                - 768
+                - 800
+            preserve_aspect_ratio: false
+            train_spatial_size:
+                - 640
+                - 640
+        batch_size: 2
+        dataset_type: serialized
+        eval_class_ids: null
+        infer_data_sources: null
+        num_classes: 3
+        pin_memory: true
+        quant_calibration_data_sources: null
+        remap_mscoco_category: false
+        test_data_sources: null
+        train_data_sources:
+            - image_dir: /workspace/new_scenerio_dataset_rtdetr/train/images
+              json_file: /workspace/new_scenerio_dataset_rtdetr/annotations/instances_train.json
+        val_data_sources:
+            image_dir: /workspace/new_scenerio_dataset_rtdetr/val/images
+            json_file: /workspace/new_scenerio_dataset_rtdetr/annotations/instances_val.json
+        workers: 8
+distill:
+    value: null
+encryption_key:
+    value: null
+evaluate:
+    value:
+        batch_size: 1
+        checkpoint: ???
+        conf_threshold: 0
+        gpu_ids:
+            - 0
+        input_height: null
+        input_width: null
+        is_quantized: false
+        num_gpus: 1
+        num_nodes: 1
+        results_dir: /workspace/results/evaluate
+        trt_engine: null
+export:
+    value:
+        batch_size: 1
+        checkpoint: ???
+        format: onnx
+        gpu_id: 0
+        input_channel: 3
+        input_height: 640
+        input_width: 640
+        is_quantized: false
+        on_cpu: false
+        onnx_file: ???
+        opset_version: 17
+        results_dir: /workspace/results/export
+        serialize_nvdsinfer: false
+        verbose: false
+gen_trt_engine:
+    value:
+        batch_size: 1
+        gpu_id: 0
+        onnx_file: ???
+        results_dir: /workspace/results/trt_engine
+        tensorrt:
+            calibration:
+                cal_batch_size: 1
+                cal_batches: 1
+                cal_cache_file: ???
+                cal_image_dir: ???
+            data_type: FP32
+            layers_precision: []
+            max_batch_size: 4
+            min_batch_size: 1
+            opt_batch_size: 1
+            workspace_size: 1024
+        timing_cache: null
+        trt_engine: ???
+        verbose: false
+inference:
+    value:
+        batch_size: 1
+        checkpoint: ???
+        color_map: null
+        conf_threshold: 0.5
+        gpu_ids:
+            - 0
+        input_height: null
+        input_width: null
+        is_internal: false
+        is_quantized: false
+        num_gpus: 1
+        num_nodes: 1
+        outline_width: 3
+        results_dir: /workspace/results/inference
+        trt_engine: null
+model:
+    value:
+        act: silu
+        alpha: 0.75
+        aux_loss: true
+        backbone: resnet_50
+        backbone_names:
+            - backbone.0
+        bbox_cost: 5
+        bbox_loss_coef: 5
+        class_cost: 2
+        clip_max_norm: 0.1
+        dec_layers: 6
+        depth_mult: 1
+        dim_feedforward: 1024
+        distillation_loss_coef: 1
+        dn_number: 100
+        dropout_ratio: 0
+        enc_act: gelu
+        enc_layers: 1
+        eval_idx: -1
+        expansion: 1
+        feat_channels:
+            - 256
+            - 256
+            - 256
+        feat_strides:
+            - 8
+            - 16
+            - 32
+        frozen_fm:
+            backbone: radio_v2-l
+            checkpoint: null
+            enabled: false
+        gamma: 2
+        giou_cost: 2
+        giou_loss_coef: 2
+        hidden_dim: 256
+        linear_proj_names:
+            - reference_points
+            - sampling_offsets
+        load_teacher_enc_dec: false
+        loss_types:
+            - vfl
+            - boxes
+        nheads: 8
+        num_feature_levels: 3
+        num_queries: 300
+        num_select: 300
+        pe_temperature: 10000
+        pretrained_backbone_path: null
+        return_interm_indices:
+            - 1
+            - 2
+            - 3
+        train_backbone: true
+        use_encoder_idx:
+            - 2
+        vfl_loss_coef: 1
+model_name:
+    value: null
+quantize:
+    value:
+        algorithm: minmax
+        backend: torchao
+        device: cuda
+        layers: []
+        mode: weight_only_ptq
+        model_path: ""
+        results_dir: ""
+        skip_names: []
+results_dir:
+    value: /workspace/results/train
+train:
+    value:
+        activation_checkpoint: true
+        checkpoint_interval: 1
+        checkpoint_interval_unit: epoch
+        clip_grad_norm: 0.1
+        cudnn:
+            benchmark: false
+            deterministic: true
+        distributed_strategy: ddp
+        ema:
+            cpu_offload: false
+            decay: 0.999
+            every_n_steps: 1
+            validate_original_weights: false
+        enable_ema: false
+        freeze: []
+        gpu_ids:
+            - 0
+        is_dry_run: false
+        num_epochs: 10
+        num_gpus: 1
+        num_nodes: 1
+        optim:
+            lr: 0.0001
+            lr_backbone: 1e-05
+            lr_decay: 0.1
+            lr_scheduler: MultiStep
+            lr_step_size: 1000
+            lr_steps:
+                - 1000
+            momentum: 0.9
+            monitor_name: val_loss
+            optimizer: AdamW
+            warmup_steps: 0
+            weight_decay: 0.0001
+        precision: fp32
+        pretrained_model_path: null
+        results_dir: /workspace/results/train
+        resume_training_checkpoint_path: null
+        seed: 1234
+        validation_interval: 1
+wandb:
+    value:
+        enable: true
+        entity: prajwalkion-kion
+        group: ""
+        name: TAO Toolkit training experiment
+        project: TAO-training
+        reinit: false
+        run_id: ""
+        save_code: false
+        sync_tensorboard: false
+        tags:
+            - training
+            - tao-toolkit

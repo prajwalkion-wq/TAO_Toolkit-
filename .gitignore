@@ -2,16 +2,24 @@
 new_scenerio_dataset_rtdetr/train/
 new_scenerio_dataset_rtdetr/val/
 
-# Model weights and checkpoints
+# Model weights and checkpoints (large binaries)
 models/
-results/
+results/**/*.pth
+results/**/*.engine
+results/**/*.onnx
+results/**/*.trt
+
+# TensorBoard binary event files
+results/**/events.out.tfevents.*
+
+# WandB binary run files
+results/**/wandb/**/*.wandb
 
 # Temporary / OS files
 __pycache__/
 *.pyc
-*.pth
-*.engine
-*.onnx
-*.trt
 .DS_Store
 Thumbs.db
+
+# Backup files
+*.backup
