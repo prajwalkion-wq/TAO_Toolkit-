@@ -1,0 +1,17 @@
+# Dataset images (large binary files)
+new_scenerio_dataset_rtdetr/train/
+new_scenerio_dataset_rtdetr/val/
+
+# Model weights and checkpoints
+models/
+results/
+
+# Temporary / OS files
+__pycache__/
+*.pyc
+*.pth
+*.engine
+*.onnx
+*.trt
+.DS_Store
+Thumbs.db
