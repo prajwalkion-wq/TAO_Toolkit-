@@ -79,7 +79,9 @@ dataset:
   val_data_sources:
       image_dir: /workspace/new_scenerio_dataset_rtdetr/val/images
       json_file: /workspace/new_scenerio_dataset_rtdetr/annotations/instances_val.json
-  test_data_sources: null
+  test_data_sources:
+      image_dir: /workspace/new_scenerio_dataset_rtdetr/val/images
+      json_file: /workspace/new_scenerio_dataset_rtdetr/annotations/instances_val.json
   infer_data_sources: null
   quant_calibration_data_sources: null # Need to change as per the dataset used.
   batch_size: 2 # Batch size for training.
@@ -157,7 +159,7 @@ evaluate:
   gpu_ids:
   - 0
   num_nodes: 1
-  checkpoint: ???
+  checkpoint: /workspace/results/train/model_epoch_008.pth
   trt_engine: null
   results_dir: /workspace/results/evaluate
   batch_size: 1
@@ -170,7 +172,7 @@ inference:
   gpu_ids:
   - 0
   num_nodes: 1
-  checkpoint: ???
+  checkpoint: /workspace/results/train/model_epoch_008.pth
   trt_engine: null
   results_dir: /workspace/results/inference
   batch_size: 1
@@ -184,7 +186,7 @@ inference:
 export:
   results_dir: /workspace/results/export
   gpu_id: 0
-  checkpoint: ???
+  checkpoint: /workspace/results/train/model_epoch_008.pth
   onnx_file: ???
   on_cpu: false
   input_channel: 3
